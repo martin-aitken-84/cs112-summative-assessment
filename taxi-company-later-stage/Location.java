@@ -8,6 +8,7 @@ public class Location
 {
     private int x;
     private int y;
+    private City city;
 
     /**
      * Model a location in the city.
@@ -25,6 +26,7 @@ public class Location
             throw new IllegalArgumentException(
                         "Negative y-coordinate: " + y);
         }
+
         this.x = x;
         this.y = y;
         this.city = city;
@@ -47,7 +49,7 @@ public class Location
         int offsetX = x < destX ? 1 : x > destX ? -1 : 0;
         int offsetY = y < destY ? 1 : y > destY ? -1 : 0;
         if(offsetX != 0 || offsetY != 0) {
-            return new Location(x + offsetX, y + offsetY);
+            return new Location(x + offsetX, y + offsetY, city);
         }
         else {
             return destination;

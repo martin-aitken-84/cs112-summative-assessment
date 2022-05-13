@@ -13,7 +13,7 @@ public class Passenger implements DrawableItem
     private Location pickup;
     private Location destination;
     private Image image;
-
+    private City city;
     /**
      * Constructor for objects of class Passenger
      * @param pickup The pickup location, must not be null.

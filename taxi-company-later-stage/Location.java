@@ -6,9 +6,9 @@
  */
 public class Location
 {
-    private int x;
-    private int y;
-    private City city;
+    private final int x;
+    private final int y;
+    private final City city;
 
     /**
      * Model a location in the city.

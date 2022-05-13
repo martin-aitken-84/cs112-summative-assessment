@@ -1,0 +1,27 @@
+Test 1:
+Taxis: 3
+
+Missed Passengers: 2
+Average Idle: 51.0
+Total Idle: 153
+
+Test 2:
+Taxis: 7
+
+Missed Passengers: 0
+Average Idle: 72.57142857142857
+Total Idle: 508
+
+Test 3:
+Taxis: 2
+
+Missed Passengers: 4
+Average Idle: 48.5
+Total Idle: 97
+
+Test 4:
+Taxis: 21
+
+Missed Passengers: 0
+Average Idle: 90.85714285714286
+Total Idle: 1908

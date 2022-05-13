@@ -10,9 +10,9 @@ import javax.swing.ImageIcon;
  */
 public class Passenger implements DrawableItem
 {
-    private Location pickup;
-    private Location destination;
-    private Image image;
+    private final Location pickup;
+    private final Location destination;
+    private final Image image;
     private City city;
     /**
      * Constructor for objects of class Passenger

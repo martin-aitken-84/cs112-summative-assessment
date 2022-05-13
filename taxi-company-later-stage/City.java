@@ -10,9 +10,9 @@ import java.util.List;
  */
 public class City
 {
-    private List<Item> items;
-    private int width;
-    private int height;
+    private final List<Item> items;
+    private final int width;
+    private final int height;
     
     private static final int DEFAULT_WIDTH = 35;
     private static final int DEFAULT_HEIGHT = 35;

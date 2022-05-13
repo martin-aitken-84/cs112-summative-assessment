@@ -20,7 +20,7 @@ public class Passenger implements DrawableItem
      * @param destination The destination location, must not be null.
      * @throws NullPointerException If either location is null.
      */
-    public Passenger(Location pickup, Location destination)
+    public Passenger(Location pickup, Location destination, City city)
     {
         if(pickup == null) {
             throw new NullPointerException("Pickup location");
@@ -30,6 +30,8 @@ public class Passenger implements DrawableItem
         }
         this.pickup = pickup;
         this.destination = destination;
+        if(pickup.equals(destination)){throw new SameLocationException(destination, pickup);}
+
         // Load the image used to represent a person.
         image = new ImageIcon(getClass().getResource(
                               "images/person.jpg")).getImage();

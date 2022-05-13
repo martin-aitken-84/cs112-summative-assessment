@@ -15,7 +15,7 @@ public class Location
      * @param y The y coordinate. Must be positive.
      * @throws IllegalArgumentException If a coordinate is negative.
      */
-    public Location(int x, int y)
+    public Location(int x, int y, City city)
     {
         if(x < 0) {
             throw new IllegalArgumentException(
@@ -27,6 +27,10 @@ public class Location
         }
         this.x = x;
         this.y = y;
+        this.city = city;
+        if(x > city.getWidth() | y > city.getHeight()){
+            throw new IllegalArgumentException("Next Location is outwith the city limits.");
+        }
     }
     
     /**

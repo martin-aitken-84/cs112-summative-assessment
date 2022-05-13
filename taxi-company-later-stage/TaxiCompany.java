@@ -121,7 +121,8 @@ public class TaxiCompany
             Taxi taxi =
                 new Taxi(this,
                          new Location(rand.nextInt(cityWidth),
-                                      rand.nextInt(cityHeight)));
+                                      rand.nextInt(cityHeight),
+                                    city));
             vehicles.add(taxi);
             city.addItem(taxi);
         }

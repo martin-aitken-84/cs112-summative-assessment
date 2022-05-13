@@ -79,13 +79,15 @@ public class PassengerSource implements Actor
 
         Location pickupLocation =
                     new Location(rand.nextInt(cityWidth),
-                                 rand.nextInt(cityHeight));
+                                 rand.nextInt(cityHeight),
+                                city);
         Location destination;
         do{
             destination =
                     new Location(rand.nextInt(cityWidth),
-                                 rand.nextInt(cityHeight));
+                                 rand.nextInt(cityHeight),
+                                city);
         } while(pickupLocation.equals(destination));
-        return new Passenger(pickupLocation, destination);
+        return new Passenger(pickupLocation, destination, city);
     }
 }

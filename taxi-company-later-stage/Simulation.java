@@ -10,7 +10,9 @@ import java.util.List;
  */
 public class Simulation
 {
-    private List<Actor> actors;
+    private final List<Actor> actors;
+    private TaxiCompany company;
+    private PassengerSource source;
     private int step;
 
     /**
@@ -21,8 +23,8 @@ public class Simulation
         actors = new LinkedList<>();
         step = 0;
         City city = new City();
-        TaxiCompany company = new TaxiCompany(city);
-        PassengerSource source = new PassengerSource(city, company);
+        this.company = new TaxiCompany(city);
+        this.source = new PassengerSource(city, company);
         
         actors.addAll(company.getVehicles());
         actors.add(source);
@@ -33,13 +35,17 @@ public class Simulation
      * Run the simulation for a fixed number of steps.
      * Pause after each step to allow the GUI to keep up.
      */
-    public void run()
+    public void run(int steps)
     {
-        for(int i = 0; i < 500; i++){
+        for(int i = 0; i < steps; i++){
             step++;
             step();
-            wait(100);
         }
+        System.out.println("Taxis: " + company.getVehicles().size());
+        System.out.println();
+        System.out.println("Missed Passengers: " + source.missedPickups());
+        System.out.println("Average Idle: " + company.averageIdle());
+        System.out.println("Total Idle: " + company.sumIdle());
     }
 
     /**

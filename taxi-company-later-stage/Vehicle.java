@@ -6,7 +6,7 @@
  */
 public abstract class Vehicle implements Actor
 {
-    private TaxiCompany company;
+    private final TaxiCompany company;
     // Where the vehicle is.
     private Location location;
     // Where the vehicle is headed.

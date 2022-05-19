@@ -15,8 +15,8 @@ public class CityGUI extends JFrame implements Actor
     // The dimensions of the GUI.
     public static final int CITY_VIEW_WIDTH = 600;
     public static final int CITY_VIEW_HEIGHT = 600;
-    private City city;
-    private CityView cityView;
+    private final City city;
+    private final CityView cityView;
     
     /**
      * Constructor for objects of class CityGUI
@@ -64,7 +64,8 @@ public class CityGUI extends JFrame implements Actor
     {
         private final int VIEW_SCALING_FACTOR = 6;
 
-        private int cityWidth, cityHeight;
+        private final int cityWidth;
+        private final int cityHeight;
         private int xScale, yScale;
         private Dimension size;
         private Graphics g;

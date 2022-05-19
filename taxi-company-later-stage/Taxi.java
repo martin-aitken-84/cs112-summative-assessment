@@ -12,7 +12,8 @@ public class Taxi extends Vehicle implements DrawableItem
     private Passenger passenger;
     // Maintain separate images for when the taxi is empty
     // and full.
-    private Image emptyImage, passengerImage;
+    private final Image emptyImage;
+    private final Image passengerImage;
     
     /**
      * Constructor for objects of class Taxi
@@ -49,6 +50,7 @@ public class Taxi extends Vehicle implements DrawableItem
                 }
                 else {
                     notifyPickupArrival();
+
                 }
             }
         }

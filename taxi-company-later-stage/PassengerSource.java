@@ -13,9 +13,9 @@ import java.util.Random;
  */
 public class PassengerSource implements Actor
 {
-    private City city;
-    private TaxiCompany company;
-    private Random rand;
+    private final City city;
+    private final TaxiCompany company;
+    private final Random rand;
     private static final double CREATION_PROBABILITY = 0.06;
     private int missedPickups;
 
@@ -79,13 +79,19 @@ public class PassengerSource implements Actor
 
         Location pickupLocation =
                     new Location(rand.nextInt(cityWidth),
-                                 rand.nextInt(cityHeight));
+                                 rand.nextInt(cityHeight),
+                                city);
         Location destination;
         do{
             destination =
                     new Location(rand.nextInt(cityWidth),
-                                 rand.nextInt(cityHeight));
+                                 rand.nextInt(cityHeight),
+                                city);
         } while(pickupLocation.equals(destination));
-        return new Passenger(pickupLocation, destination);
+        return new Passenger(pickupLocation, destination, city);
+    }
+
+    public int missedPickups(){
+        return missedPickups;
     }
 }

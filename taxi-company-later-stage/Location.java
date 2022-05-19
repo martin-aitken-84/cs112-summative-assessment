@@ -6,8 +6,9 @@
  */
 public class Location
 {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
+    private final City city;
 
     /**
      * Model a location in the city.
@@ -15,7 +16,7 @@ public class Location
      * @param y The y coordinate. Must be positive.
      * @throws IllegalArgumentException If a coordinate is negative.
      */
-    public Location(int x, int y)
+    public Location(int x, int y, City city)
     {
         if(x < 0) {
             throw new IllegalArgumentException(
@@ -25,8 +26,13 @@ public class Location
             throw new IllegalArgumentException(
                         "Negative y-coordinate: " + y);
         }
+
         this.x = x;
         this.y = y;
+        this.city = city;
+        if(x > city.getWidth() | y > city.getHeight()){
+            throw new IllegalArgumentException("Next Location is outwith the city limits.");
+        }
     }
     
     /**
@@ -43,7 +49,7 @@ public class Location
         int offsetX = x < destX ? 1 : x > destX ? -1 : 0;
         int offsetY = y < destY ? 1 : y > destY ? -1 : 0;
         if(offsetX != 0 || offsetY != 0) {
-            return new Location(x + offsetX, y + offsetY);
+            return new Location(x + offsetX, y + offsetY, city);
         }
         else {
             return destination;

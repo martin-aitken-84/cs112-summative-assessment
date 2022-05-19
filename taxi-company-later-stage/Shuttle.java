@@ -11,9 +11,9 @@ import java.util.LinkedList;
 public class Shuttle extends Vehicle
 {
     // The list of destinations for the shuttle.
-    private List<Location> destinations;
+    private final List<Location> destinations;
     // The list of passengers on the shuttle.
-    private List<Passenger> passengers;
+    private final List<Passenger> passengers;
 
     /**
      * Constructor for objects of class Shuttle
